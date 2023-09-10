@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:shopping_app_mvvm_clean_architecture/presentation/resources/routes_manager.dart';
+import 'package:shopping_app_mvvm_clean_architecture/presentation/resources/theme_manager.dart';
 
 class MyApp extends StatefulWidget {
   // const MyApp({super.key}); // Default Constructor
@@ -16,6 +18,11 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return MaterialApp(
+
+      onGenerateRoute: RouteGenerator.getRoute,
+      theme: getApplicationTheme(),
+      initialRoute: Routes.splashRoute,
+    );
   }
 }
